@@ -18,28 +18,12 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 
 /*
-* Stappen:
+* Stappenplan opdracht 1a:
 * 1. functie maken met als input de cijfer array
 * 2. in de functie een let variabele met daarin een opteller voor de hoeveelheid diploma's
 * 2. for loop in de functie maken, array checken.
 * 4. elke keer als de entry waar is (if statement), dan optellen
 * */
-
-function gradesCumLaudeChecker(gradesArray){
- let cumLaudeCounter = 0;
- //console.log("de functie doet het");
-    for (let i = 0; i < gradesArray.length; i++) {
-        //console.log(gradesArray[i]);
-        if(gradesArray[i]>=8){
-            cumLaudeCounter++;
-        }
-    }
-    return cumLaudeCounter;
-}
-
-const cumLaude = gradesCumLaudeChecker(grades);
-
-console.log("Cum laude count:"+cumLaude);
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
@@ -51,8 +35,22 @@ console.log("Cum laude count:"+cumLaude);
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-//zie opdracht 1a. Als test een paar extra arrays:
+function gradesCumLaudeChecker(gradesArray){
+    let cumLaudeCounter = 0;
+    //console.log("de functie doet het");
+    for (let i = 0; i < gradesArray.length; i++) {
+        //console.log(gradesArray[i]);
+        if(gradesArray[i]>=8){
+            cumLaudeCounter++;
+        }
+    }
+    return cumLaudeCounter;
+}
 
+const cumLaude = gradesCumLaudeChecker(grades);
+
+//testen output:
+console.log("Cum laude count:"+cumLaude);
 console.log("Dubbele check:",gradesCumLaudeChecker([6,4,5]));
 console.log("Nog een check:",gradesCumLaudeChecker([8, 9, 4, 6, 10]));
 
@@ -68,7 +66,7 @@ console.log("Nog een check:",gradesCumLaudeChecker([8, 9, 4, 6, 10]));
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
-/*
+/*Stappenplan opdracht 2a:
 * Stap 1: een functie schrijven met als input de cijfer array
 * stap 2: een let in deze functie maken voor de som van alle getallen uit de array opgeteld
 * stap 3: een for loop maken waarbij elke entry van de array opgeteld wordt bij de som variabele
@@ -92,6 +90,7 @@ function averageGrade(gradesArray){
     }
     return sumCountGrades / gradesArray.length.toFixed(2);
 }
+//testen output:
 console.log("Gemiddeld cijfer grades array:"+averageGrade(grades).toFixed(2));
 console.log("Testcase een voor gemiddeld cijfer:"+averageGrade([6, 4, 5]));
 console.log("Testcase twee voor gemiddeld cijfer:"+averageGrade([8, 9, 4, 6, 10]));
@@ -100,7 +99,7 @@ console.log("Testcase twee voor gemiddeld cijfer:"+averageGrade([8, 9, 4, 6, 10]
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-//Antwoord zie bovenstaande functie: toFixed(2) toegevoegd achter de return waarde.
+//Antwoord opdracht 2c: zie bovenstaande functie: toFixed(2) toegevoegd achter de return waarde.
 
 
 /* Bonusopdracht: hoogste cijfer */
