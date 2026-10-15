@@ -9,9 +9,10 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
-function getEmailDomain(emailAddress){
+function getEmailDomain(emailAddress) {
     return emailAddress.split("@")[1];
 }
+
 //output test:
 console.log(getEmailDomain("n.eeken@novi-education.nl"));
 console.log(getEmailDomain("t.mellink@novi.nl"));
@@ -25,24 +26,22 @@ console.log(getEmailDomain("a.wiersma@outlook.com"));
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
-function typeOfEmail(emailAddress){
+function typeOfEmail(emailAddress) {
     let typeOfEmailAddress = "Extern";
-    const emailDomain = emailAddress.split("@")[1];
 
-    if(emailDomain.includes("novi-education.nl")){
+    const indexOfAtSign = emailAddress.indexOf('@');
+    const emailDomain = emailAddress.substring(indexOfAtSign + 1);
+
+    if (emailDomain === "novi-education.nl") {
         //console.log("student");
         typeOfEmailAddress = "Student";
-    }
-    else if(emailDomain.includes("novi.nl")){
+    } else if (emailDomain === "novi.nl") {
         //console.log("medewerker");
         typeOfEmailAddress = "Medewerker";
     }
-    else{
-        //console.log("extern");
-        typeOfEmailAddress = "Extern";
-    }
     return typeOfEmailAddress;
 }
+
 console.log(typeOfEmail("n.eeken@novi-education.nl"));
 console.log(typeOfEmail("t.mellink@novi.nl"));
 console.log(typeOfEmail("novi.nlaapjesk@outlook.com"));
@@ -61,20 +60,14 @@ console.log(typeOfEmail("a.wiersma@outlook.com"));
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 
-function checkEmailValidity(emailAddress){
+function checkEmailValidity(emailAddress) {
     const containsAtSign = emailAddress.includes("@");
     const hasNoComma = !emailAddress.includes(",");
     const hasNoEndDot = !emailAddress.endsWith(".");
 
-    let emailValidity = false;
-
-    if( containsAtSign && hasNoComma && hasNoEndDot){
-        return emailValidity = true;
-    }
-    else{
-        return emailValidity = false;
-    }
+    return !!(containsAtSign && hasNoComma && hasNoEndDot);
 }
+
 //output test
 console.log(checkEmailValidity("n.eeken@novi.nl"));
 console.log(checkEmailValidity("tessmellink@novi.nl"));

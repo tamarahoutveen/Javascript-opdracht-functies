@@ -35,12 +35,12 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-function gradesCumLaudeChecker(gradesArray){
+function gradesCumLaudeChecker(gradesArray) {
     let cumLaudeCounter = 0;
-    //console.log("de functie doet het");
+
     for (let i = 0; i < gradesArray.length; i++) {
-        //console.log(gradesArray[i]);
-        if(gradesArray[i]>=8){
+        if (gradesArray[i] >= 8) {
+
             cumLaudeCounter++;
         }
     }
@@ -50,9 +50,9 @@ function gradesCumLaudeChecker(gradesArray){
 const cumLaude = gradesCumLaudeChecker(grades);
 
 //testen output:
-console.log("Cum laude count:"+cumLaude);
-console.log("Dubbele check:",gradesCumLaudeChecker([6,4,5]));
-console.log("Nog een check:",gradesCumLaudeChecker([8, 9, 4, 6, 10]));
+console.log("Cum laude count:" + cumLaude);
+console.log("Dubbele check:", gradesCumLaudeChecker([6, 4, 5]));
+console.log("Nog een check:", gradesCumLaudeChecker([8, 9, 4, 6, 10]));
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -83,17 +83,18 @@ console.log("Nog een check:",gradesCumLaudeChecker([8, 9, 4, 6, 10]));
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
-function averageGrade(gradesArray){
+function averageGrade(gradesArray) {
     let sumCountGrades = 0;
     for (let i = 0; i < gradesArray.length; i++) {
-        sumCountGrades = sumCountGrades+gradesArray[i];
+        sumCountGrades = sumCountGrades + gradesArray[i];
     }
     return sumCountGrades / gradesArray.length.toFixed(2);
 }
+
 //testen output:
-console.log("Gemiddeld cijfer grades array:"+averageGrade(grades).toFixed(2));
-console.log("Testcase een voor gemiddeld cijfer:"+averageGrade([6, 4, 5]));
-console.log("Testcase twee voor gemiddeld cijfer:"+averageGrade([8, 9, 4, 6, 10]));
+console.log("Gemiddeld cijfer grades array:" + averageGrade(grades).toFixed(2));
+console.log("Testcase een voor gemiddeld cijfer:" + averageGrade([6, 4, 5]));
+console.log("Testcase twee voor gemiddeld cijfer:" + averageGrade([8, 9, 4, 6, 10]));
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
@@ -113,18 +114,19 @@ console.log("Testcase twee voor gemiddeld cijfer:"+averageGrade([8, 9, 4, 6, 10]
 
 // ---- Verwachte uitkomst: 9
 
-function highestGrade(gradesArray){
+
+function highestGrade(gradesArray) {
     let highestGradeFromArray = 0;
     for (let i = 0; i < gradesArray.length; i++) {
-        //console.log(gradesArray[i]);
-        if(gradesArray[i] >= highestGradeFromArray){
+
+        if (gradesArray[i] >= highestGradeFromArray) {
             highestGradeFromArray = gradesArray[i];
-            //console.log("Hogere waarde, namelijk:"+highestGradeFromArray);
         }
     }
     return highestGradeFromArray;
 }
-console.log("De waarde is:"+highestGrade(grades));
+
+console.log("De waarde is:" + highestGrade(grades));
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -136,5 +138,5 @@ console.log("De waarde is:"+highestGrade(grades));
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
 
-console.log("Testcase hoogste cijfer:"+highestGrade([6, 4, 5]));
-console.log("Testcase twee voor hoogste cijfer:"+highestGrade([8, 9, 4, 6, 10]));
+console.log("Testcase hoogste cijfer:" + highestGrade([6, 4, 5]));
+console.log("Testcase twee voor hoogste cijfer:" + highestGrade([8, 9, 4, 6, 10]));
